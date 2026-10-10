@@ -14,6 +14,16 @@ MCP client (omp / Claude Code / Cline / ...)
 src/mcp_server.py ──► src/omp_bridge_core.py ──► omp --mode rpc (长驻子进程)
 ```
 
+> **🤖 给 AI agent 的说明**
+>
+> 如果你是 AI 编码 agent（omp / Claude Code / Cline / Cursor 等），在动手改这个仓库前请先读 **[`agent-readme.md`](./agent-readme.md)**（仓库根目录也有自动加载的 `AGENTS.md`，内容一致）——里面有：项目结构与职责划分、必须遵守的硬约束（纯标准库、stdout 只走 MCP 消息、每 context 复用子进程）、测试命令、以及前人踩过的坑。特别是：
+>
+> - **不要加第三方依赖**（纯 Python 标准库是硬约束）
+> - **不要修 `omp_bridge_core.py` 里那个"看起来有 bug"的 `WorkerPool._reaper`** —— 真正生效的是模块级 `_start_reaper()`
+> - 发版要同时改 `mcp_server.py` 的 `serverInfo.version` 和 `package.json`
+>
+> 人类使用者请继续往下看 👇
+
 ## ✨ 功能
 
 | 工具 | 说明 |
