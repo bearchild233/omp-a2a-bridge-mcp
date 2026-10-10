@@ -1,0 +1,15 @@
+{
+  "name": "@bearchild/omp-a2a-bridge-mcp",
+  "version": "0.1.0",
+  "description": "MCP server that exposes the oh-my-pi (omp) coding agent as callable tools — install once, use omp from any MCP client.",
+  "license": "MIT",
+  "type": "module",
+  "files": ["src", "scripts", "mcp.json", "README.md"],
+  "keywords": ["omp", "oh-my-pi", "mcp", "a2a", "coding-agent", "bridge"],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test:core": "python3 src/mcp_server.py"
+  }
+}

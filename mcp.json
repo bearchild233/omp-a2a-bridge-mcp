@@ -1,0 +1,16 @@
+{
+  "$schema": "https://raw.githubusercontent.com/can1357/oh-my-pi/main/packages/coding-agent/src/config/mcp-schema.json",
+  "mcpServers": {
+    "omp-a2a-bridge-mcp": {
+      "type": "stdio",
+      "command": "python3",
+      "args": ["./src/mcp_server.py"],
+      "env": {
+        "OMP_BIN": "${OMP_BIN:-omp}",
+        "OMP_A2A_CWD": "${OMP_A2A_CWD:-/root}",
+        "OMP_A2A_IDLE_TTL": "${OMP_A2A_IDLE_TTL:-1800}",
+        "OMP_A2A_PROMPT_TIMEOUT": "${OMP_A2A_PROMPT_TIMEOUT:-600}"
+      }
+    }
+  }
+}
